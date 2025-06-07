@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button focus styles */
+button:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+/* Form input focus styles */
+input:focus, select:focus, textarea:focus {
+  --tw-ring-color: #4f46e5;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 1px var(--tw-ring-color);
+}
+
+/* Animation for modal */
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content {
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 425px) {
+  .custom-width {
+    max-width: 310px;
+  }
+  
+  .product-card {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  button, .no-print {
+    display: none !important;
+  }
+}
