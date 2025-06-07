@@ -6,7 +6,7 @@ A modern, responsive web application for managing and building product catalogs.
 
 ## 🌐 Live Demo
 
-🔗 **[View Live Demo on Vercel](https://product-builder-demo.vercel.app)**
+🔗 **[View Live Demo on Vercel](https://advanced-product-builder.vercel.app/)**
 
 ---
 
