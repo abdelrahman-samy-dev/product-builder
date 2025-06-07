@@ -4,7 +4,7 @@ import Modal from "./components/ui/Modal"
 import { categories, colors, formInputsList, productList } from "./data"
 import Button from "./components/ui/Button";
 import Input from "./components/ui/Input";
-import { IProduct } from "./interfaces";
+import { IProduct, ICategory } from "./interfaces";
 import { productValidation } from "./validation";
 import ErrorMessage from "./components/ErrorMessage";
 import CircleColor from "./components/CircleColor";
@@ -14,16 +14,13 @@ import Swal from 'sweetalert2';
 import 'sweetalert2/src/sweetalert2.scss';
 
 const App = () => {
-  const defaultProductObject = {
+  const defaultProductObject: IProduct = {
     title: '',
     description: '',
     imageURL: '',
     price: '',
     colors: [],
-    category: {
-      name: '',
-      imageURL: ''
-    }
+    category: categories[0]
   }
 
   const [products, setProducts] = useState<IProduct[]>(() => {
@@ -35,7 +32,7 @@ const App = () => {
   const [tempColors, setTempColor] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isEdit, setIsEdit] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(categories[0]);
+  const [selectedCategory, setSelectedCategory] = useState<ICategory>(categories[0]);
 
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
@@ -98,7 +95,7 @@ const App = () => {
         confirmButtonText: 'OK'
       });
     } else {
-      const newProduct = {
+      const newProduct: IProduct = {
         ...product,
         id: uuid(),
         colors: tempColors,
